@@ -90,8 +90,10 @@ function Company() {
     },[])
 
     function RenderAdsTableRow(){
-        let remainingBudget,clickCount,impressionCount
+        let remainingBudget,clickCount,impressionCount,Budget_click,Budget_impression
         remainingBudget = 0.0
+        Budget_click = 0.0
+        Budget_impression = 0.0
         if(eventArray.length > 0){
         const eventInArray = eventArray.filter(o1 => {
             return adsArray.some(function (o2) {
@@ -106,16 +108,24 @@ function Company() {
             const impressionCountArray = eventInArray.filter(o1 => {
                 return o1.ON_ADS === i.ID && o1.EVENT_TYPE === 'vast:adImpression'
             })
-            console.log('clickCount',clickCountArray[0].INSIGHT)
-            console.log('impressionCount',impressionCountArray[0].INSIGHT)
-            console.log('totalBudget',i.BUDGET_TOTAL)
-            if(clickCountArray.length > 0 && impressionCountArray.length > 0) {
-                remainingBudget = parseFloat(i.BUDGET_TOTAL) - ((clickCountArray[0].INSIGHT * parseFloat(i.CLICK)) + (impressionCountArray[0].INSIGHT * parseFloat(i.IMPRESSION)))
+            // console.log('clickCount',clickCountArray[0].INSIGHT)
+            // console.log('impressionCount',impressionCountArray[0].INSIGHT)
+            // console.log('totalBudget',i.BUDGET_TOTAL)
+            if(clickCountArray.length > 0 ) {
+                Budget_click = (clickCountArray[0].INSIGHT * parseFloat(i.CLICK))
                 clickCount = clickCountArray[0].INSIGHT
+            }
+            if(impressionCountArray.length > 0) {
+                Budget_impression =  (impressionCountArray[0].INSIGHT * parseFloat(i.IMPRESSION))
                 impressionCount = impressionCountArray[0].INSIGHT
             }  
+
+            remainingBudget = parseFloat(i.BUDGET_TOTAL) - (Budget_click + Budget_impression)
+
             if(remainingBudget < 0){
                 remainingBudget = 0.0
+            }else if (remainingBudget === 0 ){
+                remainingBudget = parseFloat(i.BUDGET_TOTAL)
             }
             
             console.log('remainingBudget',remainingBudget)

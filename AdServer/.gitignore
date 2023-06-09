@@ -3,3 +3,4 @@ node_modules/
 test_vast.xml
 commitlint.config.js
 .pgdata
+.env
