@@ -18,22 +18,20 @@ Blockchain helps us to minimize this problem. We are here to help you out.Web3 A
 
 **Note**
 
-Currently, this demo is only for showing the limited functionality of the Web3 advertisement system. We show demo ads on the Lenstube platform. In the future, we will incorporate more features into our platform.
+Currently, this demo is only for showing the limited functionality of the Web3 advertisement system. We show demo ads on the Lenstube platform. **We added support for vast player in lenstube platform for the Chain Link Hackathon.** In the future, we will incorporate more features into our platform.
 
 **Architecture**
+![W3Ads](https://github.com/Harsh8196/w3Ads/assets/35626990/90af9178-1398-42b4-bac6-c88a9c692eca)
 
 ## Overview  
-For the guide we will go through the following high-level steps:
+In our system we have five key component
+1) AdServer - This is used to mange all advertisement details and event.
+2) Web App - This is used to create advertisement and show analytics.
+3) SxT Data Warehouse - This is used to store all advertisement data and event data coming from ad viewer.
+4) Smart Contract - This is used to store all advertisement fund and distribute to content creator
+5) Chain Link Functions - This is used to get required data from SxT to smart contract
 
-1) Base Setup & Config
-   - Prerequisites
-   - Download & install repo
-   - Setup env-env
-2) Space & Time Setup 
-   - Connect to SxT
-   - Create Table
-   - Insert Data
-3) Connect SxT to Mumbai via Chainlink Functions
+First, the Company needs to create an advertisement using our Dapp and store funds in smart contracts. As a platform, we take 30% of the overall budget for an advertisement as a platform fee. Once the advertisement is created all the data is available in Space and Time data warehouse. We delivered these ads to the Lenstube platform when the viewer starts the video. All the events related to advertisement are stored in SxT for analytics and payment distribution to the content creator. After the ads are completed we use Chainlink Functions to get data from SxT and distribute payment according to ads impression and click.
 
 ## Base Setup & Config 
 
@@ -46,9 +44,8 @@ For the guide we will go through the following high-level steps:
 1) `git clone https://github.com/Harsh8196/w3Ads`
 2) `Go to each directory and setup each component` 
 
-___
-
 ## Demo Video
 
 ## Smart Contract Address
+https://mumbai.polygonscan.com/address/0x7c0bc53a114ca8e77238c78c3e8155a87b35067e
 
