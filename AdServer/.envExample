@@ -1,0 +1,10 @@
+HOST=localhost
+PORT=8080
+BISCUIT_SESSION
+BISCUIT_EVENT
+BISCUIT_ADS
+URL_DQL= https://hackathon.spaceandtime.dev/v1/sql/dql
+URL_DML= https://hackathon.spaceandtime.dev/v1/sql/dml
+URL_REFRESH= https://hackathon.spaceandtime.dev/v1/auth/refresh
+REFRESH_TOKEN
+ACCESS_TOKEN 
