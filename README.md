@@ -25,11 +25,11 @@ Currently, this demo is only for showing the limited functionality of the Web3 a
 
 ## Overview  
 In our system we have five key component
-1) AdServer - This is used to mange all advertisement details and event.
-2) Web App - This is used to create advertisement and show analytics.
-3) SxT Data Warehouse - This is used to store all advertisement data and event data coming from ad viewer.
-4) Smart Contract - This is used to store all advertisement fund and distribute to content creator
-5) Chain Link Functions - This is used to get required data from SxT to smart contract
+1) **AdServer** - This is used to mange all advertisement details and event.
+2) **Web App** - This is used to create advertisement and show analytics.
+3) **SxT Data Warehouse** - This is used to store all advertisement data and event data coming from ad viewer.
+4) **Smart Contract** - This is used to store all advertisement fund and distribute to content creator
+5) **Chain Link Functions** - This is used to get required data from SxT to smart contract
 
 First, the Company needs to create an advertisement using our Dapp and store funds in smart contracts. As a platform, we take 30% of the overall budget for an advertisement as a platform fee. Once the advertisement is created all the data is available in Space and Time data warehouse. We delivered these ads to the Lenstube platform when the viewer starts the video. All the events related to advertisement are stored in SxT for analytics and payment distribution to the content creator. After the ads are completed we use Chainlink Functions to get data from SxT and distribute payment according to ads impression and click.
 
