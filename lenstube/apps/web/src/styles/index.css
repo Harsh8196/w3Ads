@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply min-h-screen bg-gradient-to-bl from-indigo-100 via-gray-100 to-gray-50 bg-fixed text-black antialiased dark:from-gray-800 dark:to-gray-900 dark:text-white;
+}
+
+.btn-primary {
+  @apply rounded-full bg-indigo-500 text-white focus:outline-none disabled:opacity-50;
+}
+
+.btn-danger {
+  @apply rounded-full bg-red-500 text-white focus:outline-none disabled:opacity-50;
+}
+
+.btn-hover {
+  @apply rounded-full hover:bg-indigo-100 focus:outline-none disabled:opacity-50 dark:hover:bg-indigo-900;
+}
+
+.btn-outline {
+  @apply rounded-xl border border-gray-200 hover:border-indigo-300 focus:outline-none disabled:opacity-50 dark:border-gray-800 dark:hover:border-indigo-700;
+}
+
+.bg-secondary {
+  @apply bg-white dark:bg-[#050506];
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.middot:after {
+  content: '•';
+  @apply mx-1.5 flex text-[10px] opacity-60;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* interweave linkify */
+.interweave-content a {
+  @apply text-indigo-500;
+}
+
+.input-mentions-single {
+  @apply min-h-[2.4rem] w-full text-sm;
+}
+.input-mentions-textarea {
+  @apply min-h-[7rem] w-full text-sm;
+}
+.input-mentions-textarea textarea,
+.input-mentions-single textarea {
+  @apply w-full resize-y rounded-xl border border-gray-300 bg-white px-2.5 pt-2 text-sm outline-none focus:ring-1 focus:ring-indigo-500 disabled:bg-gray-500 disabled:bg-opacity-20 disabled:opacity-60 dark:border-gray-700 dark:bg-gray-900;
+}
+.input-mentions-textarea__suggestions,
+.input-mentions-single__suggestions {
+  @apply !mt-8 w-56 rounded-xl !border !bg-white p-1 dark:border-gray-700 dark:!bg-gray-800;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.livepeer-aspect-ratio-container {
+  @apply outline-none;
+}

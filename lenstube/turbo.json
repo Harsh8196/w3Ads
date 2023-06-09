@@ -1,0 +1,22 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "export": {
+      "dependsOn": ["build"],
+      "outputs": ["out/**"]
+    },
+    "extract": { "outputs": [] },
+    "start": { "cache": false },
+    "typecheck": { "outputs": [] },
+    "e2e:test": { "dependsOn": ["^build"] },
+    "worker:deploy": { "outputs": [] },
+    "lint": { "outputs": [] },
+    "codegen": { "outputs": [] },
+    "dev": { "cache": false },
+    "dev:test": { "cache": false }
+  }
+}

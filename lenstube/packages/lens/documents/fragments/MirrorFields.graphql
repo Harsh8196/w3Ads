@@ -1,0 +1,45 @@
+fragment MirrorFields on Mirror {
+  id
+  reaction(request: $reactionRequest)
+  profile {
+    ...ProfileFields
+  }
+  referenceModule {
+    __typename
+  }
+  canComment(profileId: $channelId) {
+    result
+  }
+  canMirror(profileId: $channelId) {
+    result
+  }
+  collectModule {
+    ...CollectFields
+  }
+  collectNftAddress
+  onChainContentURI
+  hidden
+  isGated
+  isDataAvailability
+  dataAvailabilityProofs
+  hasCollectedByMe
+  stats {
+    totalUpvotes
+    totalAmountOfMirrors
+    totalAmountOfCollects
+    totalAmountOfComments
+  }
+  metadata {
+    ...MetadataFields
+  }
+  mirrorOf {
+    ... on Post {
+      ...PostFields
+    }
+    ... on Comment {
+      ...CommentFields
+    }
+  }
+  createdAt
+  appId
+}

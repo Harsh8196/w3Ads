@@ -1,0 +1,16 @@
+query Comments(
+  $request: PublicationsQueryRequest!
+  $reactionRequest: ReactionFieldResolverRequest
+  $channelId: ProfileId
+) {
+  publications(request: $request) {
+    items {
+      ... on Comment {
+        ...CommentFields
+      }
+    }
+    pageInfo {
+      next
+    }
+  }
+}

@@ -1,0 +1,43 @@
+fragment ProfileFields on Profile {
+  id
+  name
+  handle
+  bio
+  ownedBy
+  isDefault
+  interests
+  isFollowedByMe
+  dispatcher {
+    address
+    canUseRelay
+    sponsor
+  }
+  attributes {
+    key
+    value
+  }
+  stats {
+    totalFollowers
+    totalPosts
+  }
+  coverPicture {
+    ... on MediaSet {
+      original {
+        url
+      }
+    }
+  }
+  picture {
+    ... on MediaSet {
+      original {
+        url
+      }
+    }
+    ... on NftImage {
+      uri
+    }
+  }
+  followModule {
+    __typename
+  }
+}

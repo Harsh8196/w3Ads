@@ -1,0 +1,41 @@
+{
+  "name": "lenstube",
+  "description": "Decentralized video-sharing social media platform.",
+  "version": "1.0.3-beta",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/workers/*",
+    "tests"
+  ],
+  "scripts": {
+    "build": "turbo run build --parallel",
+    "dev": "turbo run dev --parallel",
+    "start": "turbo run start --parallel",
+    "codegen": "turbo run codegen",
+    "lint": "turbo run lint --parallel",
+    "typecheck": "turbo run typecheck --parallel",
+    "prepare": "husky install",
+    "workers:deploy": "turbo run worker:deploy --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "dev:test": "turbo run dev:test",
+    "e2e:test": "start-server-and-test start 4783 dev:test",
+    "i18n:extract": "turbo run extract"
+  },
+  "devDependencies": {
+    "danger": "11.2.6",
+    "husky": "^8.0.3",
+    "start-server-and-test": "^2.0.0",
+    "ts-node": "latest",
+    "turbo": "1.9.6"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "packageManager": "yarn@1.22.19",
+  "dependencies": {
+    "ads-manager": "^1.2.11",
+    "browser-cookies": "^1.2.0"
+  }
+}

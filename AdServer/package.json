@@ -1,0 +1,69 @@
+{
+  "name": "adserver",
+  "version": "1.5.0",
+  "description": "An adserver implementation to verify ad tracking implementations",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000 --bail --exist",
+    "dev": "nodemon -L server.js",
+    "start": "node server.js",
+    "start-fastify": "fastify start -l info app.js",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eyevinn/test-adserver.git"
+  },
+  "keywords": [],
+  "author": "Eyevinn Technology AB (work@eyevinn.se)",
+  "contributors": [
+    "Nicholas Frederiksen <nicholas.frederiksen@eyevinn.se> (Eyevinn Technology AB)"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Eyevinn/test-adserver/issues"
+  },
+  "homepage": "https://github.com/Eyevinn/test-adserver#readme",
+  "dependencies": {
+    "api": "^5.0.8",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "chai-match-pattern": "^1.2.0",
+    "dotenv": "^8.2.0",
+    "dotenv-vars": "^2.1.0",
+    "fast-xml-parser": "^3.21.1",
+    "fastify": "^3.14.2",
+    "fastify-autoload": "^3.7.1",
+    "fastify-cli": "^2.9.1",
+    "fastify-cors": "^5.2.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-sensible": "^3.1.1",
+    "fastify-swagger": "^4.6.0",
+    "generate-serial-number": "^0.0.3",
+    "he": "^1.2.0",
+    "knex": "^0.95.11",
+    "mocha": "^8.4.0",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.7.1",
+    "swagger-jsdoc": "^7.0.0-rc.6",
+    "timestamp-to-seconds": "^0.0.2",
+    "uuid": "^3.4.0",
+    "vast-builder": "^4.0.1",
+    "web3": "^4.0.1-rc.1",
+    "winston": "^3.3.3",
+    "xml-parse": "^0.4.0",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "nodemon": "^2.0.7",
+    "tap": "^15.0.4"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

@@ -1,0 +1,37 @@
+fragment PostFields on Post {
+  id
+  reaction(request: $reactionRequest)
+  profile {
+    ...ProfileFields
+  }
+  referenceModule {
+    __typename
+  }
+  canComment(profileId: $channelId) {
+    result
+  }
+  canMirror(profileId: $channelId) {
+    result
+  }
+  collectModule {
+    ...CollectFields
+  }
+  collectNftAddress
+  onChainContentURI
+  isGated
+  isDataAvailability
+  dataAvailabilityProofs
+  hidden
+  hasCollectedByMe
+  stats {
+    totalAmountOfComments
+    totalAmountOfCollects
+    totalAmountOfMirrors
+    totalUpvotes
+  }
+  metadata {
+    ...MetadataFields
+  }
+  createdAt
+  appId
+}

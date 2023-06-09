@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 4002",
+    "export": "next export",
+    "build": "next build",
+    "start": "yarn build && next start --port 4002",
+    "typecheck": "tsc --pretty --noEmit",
+    "lint": "eslint . --ext .js,.ts,.tsx"
+  },
+  "dependencies": {
+    "next": "13.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "20.1.7",
+    "eslint-config-weblint": "*",
+    "lens": "*",
+    "tsconfig": "*",
+    "typescript": "5.0.4",
+    "utils": "*"
+  }
+}
